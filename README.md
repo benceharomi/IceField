@@ -1,6 +1,9 @@
-## Software-Project-Lab
-Software Project Lab subject's semester project which I developed in a team during my second year of Computer Engineering BSc at BME (Spring 2020)
-# Jégmező
+# Icefield
+Icefield is my Software Project Lab subject's semester project which I developed in a team during my second year of Computer Engineering BSc at BME (Spring 2020)
+
+- - - -
+
+## Jégmező
 
 A játékban a különböző képességű szereplőknek (3 vagy több játékos lehet) kell egy tengerrel körülvett jégmezőn túlélniük. A szereplők lehetnek eszkimók vagy sarkkutatók, és körökre osztva tevékenykednek.
 
