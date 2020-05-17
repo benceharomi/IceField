@@ -1,0 +1,6 @@
+A is active player
+A Eat no food
+A ended turn early
+B is active player
+B Eat no food
+Game log saved to eatteszt2.txt

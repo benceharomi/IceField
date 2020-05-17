@@ -1,0 +1,7 @@
+Mapcreate 1 2 s 4 s 4
+Eskimo 1 3 tent brittleshovel
+Dig
+Dig
+Move EAST
+Dig
+Save log shovelbreaks.txt

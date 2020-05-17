@@ -1,0 +1,4 @@
+A is active player
+A built tent on 1
+A removed item.Tent
+Game log saved to buildtent.txt

@@ -1,0 +1,8 @@
+A is active player
+A removed item.Food
+A Eat 4 5
+A ended turn early
+B is active player
+B removed item.Food
+B Eat 3 4
+Game log saved to eatteszt3.txt

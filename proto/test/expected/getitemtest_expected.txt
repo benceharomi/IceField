@@ -1,0 +1,9 @@
+A is active player
+A GetItem 6
+A ended turn early
+B is active player
+B GetItem 1 snow
+B ended turn early
+C is active player
+C GetItem 4 no item
+Game log saved to getitemtest.txt

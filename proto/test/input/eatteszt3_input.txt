@@ -1,0 +1,7 @@
+Mapcreate 1 1 s 0
+Eskimo 1 4 shovel rope food
+Explorer 1 3 scubasuit food brittleshovel tent
+Eat
+EndTurn
+Eat
+Save log eatteszt3.txt

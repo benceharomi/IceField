@@ -1,0 +1,4 @@
+A is active player
+Blizzard 1 no effect, snow at maximum
+Blizzard 3 no effect
+Game log saved to blizzardtest1.txt

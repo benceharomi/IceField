@@ -1,0 +1,3 @@
+A is active player
+A has no tent
+Game log saved to deploynotent.txt

@@ -1,0 +1,3 @@
+A is active player
+A Dig 1
+Game log saved to dignoshovel.txt

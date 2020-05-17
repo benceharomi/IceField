@@ -1,0 +1,5 @@
+A is active player
+A ended turn early
+Polarbear moved from 2 to 3
+A is active player
+Game log saved to bearmove.txt

@@ -1,0 +1,13 @@
+Mapcreate 2 3 s 4 s 2 s 2 s 0 s 1 s 0
+Setting RandomBlizzard false
+Itemcreate 6 food
+Itemcreate 1 shovel
+Eskimo 6 5
+Eskimo 1 4
+Explorer 4 3 
+GetItem
+EndTurn
+GetItem
+EndTurn
+GetItem
+Save log getitemtest.txt

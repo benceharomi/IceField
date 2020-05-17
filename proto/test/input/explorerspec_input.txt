@@ -1,0 +1,4 @@
+Mapcreate 3 3 u1 1 u4 1 u5 1 u8 1 u2 1 u5 1 u3 1 u4 1 u7 1
+Explorer 5 3
+SpecialAbility
+Save log explorerspec.txt

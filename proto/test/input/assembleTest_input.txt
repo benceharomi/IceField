@@ -1,0 +1,6 @@
+Mapcreate 2 3 s 4 s 2 s 2 s 0 s 1 s 0
+Setting RandomBlizzard false
+Eskimo 6 3 flaregunpart flaregunpart flaregunpart
+Explorer 6 4 food
+AssembleParts
+Save log assembleTest.txt

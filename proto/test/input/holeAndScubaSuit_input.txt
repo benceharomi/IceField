@@ -1,0 +1,4 @@
+Mapcreate 1 2 s 1 h 2
+Eskimo 1 3 food scubasuit
+Move EAST
+Save log holeAndScubaSuit.txt

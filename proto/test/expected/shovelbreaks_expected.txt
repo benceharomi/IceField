@@ -1,0 +1,11 @@
+A is active player
+A Dig 1
+A Dig 1 shovel
+A Dig 1
+A Dig 1 shovel
+A move from 1 to 2
+A Dig 2
+A removed item.BrittleShovel
+A Dig 2 shovel
+A is active player
+Game log saved to shovelbreaks.txt

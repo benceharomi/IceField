@@ -1,0 +1,5 @@
+A is active player
+A Eskimo 1 built igloo
+Blizzard 1 safe
+Blizzard 1 no effect, snow at maximum
+Game log saved to blizzardtest3.txt

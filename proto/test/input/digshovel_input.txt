@@ -1,0 +1,6 @@
+Mapcreate 1 3 s 2 s 0 s 0
+Polarbear 1 3
+Setting ControlPolarbear true
+Eskimo 1 4 shovel
+Dig
+Save log digshovel.txt

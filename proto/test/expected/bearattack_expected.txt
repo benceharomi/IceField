@@ -1,0 +1,5 @@
+A is active player
+A ended turn early
+Polarbear moved from 2 to 1 and attacked
+GameOver
+Game log saved to bearattack.txt

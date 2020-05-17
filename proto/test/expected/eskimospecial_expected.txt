@@ -1,0 +1,4 @@
+A is active player
+A Eskimo 2 built igloo
+A Eskimo 2 already have shelter
+Game log saved to eskimospecial.txt
