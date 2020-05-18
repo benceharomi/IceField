@@ -69,21 +69,21 @@ public class Team implements Serializable {
         map = new Map(params);
         active = 0;
         stamina = 4;
-        team = new ArrayList<>();
+        team = new ArrayList<Character>();
         Stable startField = map.getStartField();
-        for(int i = 0; i < Integer.parseInt(params.get(0)); i++){
+        for (int i = 0; i < Integer.parseInt(params.get(0)); i++) {
             Eskimo e = new Eskimo(startField);
             team.add(e);
             e.setField(startField);
             startField.addCharacter(e, null);
         }
-        for(int i = 0; i < Integer.parseInt(params.get(1)); i++){
+        for (int i = 0; i < Integer.parseInt(params.get(1)); i++) {
             Explorer e = new Explorer(startField);
             team.add(e);
             e.setField(startField);
             startField.addCharacter(e, null);
         }
-        int pos = new Random().nextInt(map.getRows()*map.getColumns()-map.getColumns()-2)+map.getColumns()+2;
+        int pos = new Random().nextInt(map.getRows() * map.getColumns() - map.getColumns() - 2) + map.getColumns() + 2;
         polarBear = new PolarBear(map.getFields().get(pos));
     }
 
@@ -103,7 +103,7 @@ public class Team implements Serializable {
     private boolean deadCharacter() {
         for (Character character : team) {
             if (character.getHeat() == 0) {
-                Controller.instance().GameOver();
+                // Controller.instance().GameOver();
                 return true;
             }
         }
@@ -117,8 +117,8 @@ public class Team implements Serializable {
      */
     public void addCharacter(Character character) {
         if (team.size() == 0) {
-            Controller.setActivePlayer(character);
-            Controller.activePlayerOutput(character);
+            // Controller.setActivePlayer(character);
+            // Controller.activePlayerOutput(character);
         }
         team.add(character);
     }
@@ -137,16 +137,16 @@ public class Team implements Serializable {
             if (team.get(active).getField().equals(character.getField())) {
                 sumParts += character.assamblePartsC();
             } else {
-                Controller.instance().differentout();
+                // Controller.instance().differentout();
                 return false;
             }
         }
         if (sumParts == 3) {
-            Controller.instance().victoryout();
+            // Controller.instance().victoryout();
             decreaseStamina();
             return true;
         }
-        Controller.instance().misspieces(team.get(active), sumParts);
+        // Controller.instance().misspieces(team.get(active), sumParts);
         return false;
 
     }
@@ -195,9 +195,9 @@ public class Team implements Serializable {
      */
     public void moveBear(Direction d) {
         polarBear.moveP(d);
-        if (!deadCharacter())
-            Controller.instance().activePlayerOutput(team.get(active));
-        Controller.setPolarBearManualMove(false);
+        // if (!deadCharacter())
+        // Controller.instance().activePlayerOutput(team.get(active));
+        // Controller.setPolarBearManualMove(false);
     }
 
     /**
@@ -211,7 +211,7 @@ public class Team implements Serializable {
         boolean ret = false;
         if (stamina == 0)
             ret = endTurn();
-        Controller.drawMap();
+        // Controller.drawMap();
         ViewController.instance().updateAll();
         return ret;
     }
@@ -224,33 +224,34 @@ public class Team implements Serializable {
      *         nullara csokkent, egyebkent false
      */
     public boolean endTurn() {
-        if (stamina > 0)
-            Controller.instance().endTurnout(team.get(active));
+        if (stamina > 0) {
+            // Controller.instance().endTurnout(team.get(active));
+        }
         if (active == team.size() - 1) {
             active = 0;
             map.blizzardM();
             if (polarBear != null) {
                 boolean validMove = false;
                 Direction moveDirection = Direction.NORTH;
-                    while (!validMove) {
-                        int randInt = rand.nextInt(4);
-                        switch (randInt) {
-                            case 0:
-                                validMove = polarBear.moveP(Direction.EAST);
-                                break;
-                            case 1:
-                                validMove = polarBear.moveP(Direction.NORTH);
-                                break;
-                            case 2:
-                                validMove = polarBear.moveP(Direction.SOUTH);
-                                break;
-                            case 3:
-                                validMove = polarBear.moveP(Direction.WEST);
-                                break;
-                            default:
-                                break;
-                        }
+                while (!validMove) {
+                    int randInt = rand.nextInt(4);
+                    switch (randInt) {
+                        case 0:
+                            validMove = polarBear.moveP(Direction.EAST);
+                            break;
+                        case 1:
+                            validMove = polarBear.moveP(Direction.NORTH);
+                            break;
+                        case 2:
+                            validMove = polarBear.moveP(Direction.SOUTH);
+                            break;
+                        case 3:
+                            validMove = polarBear.moveP(Direction.WEST);
+                            break;
+                        default:
+                            break;
                     }
+                }
                 if (deadCharacter()) {
                     return true;
                 }
@@ -262,9 +263,9 @@ public class Team implements Serializable {
         {
             active++;
         }
-        Controller.instance().setActivePlayer(team.get(active));
-        if (!Controller.instance().isControlPolarBear())
-            Controller.instance().activePlayerOutput(team.get(active));
+        // Controller.instance().setActivePlayer(team.get(active));
+        // if (!Controller.instance().isControlPolarBear())
+        // Controller.instance().activePlayerOutput(team.get(active));
         stamina = 4;
         return false;
     }

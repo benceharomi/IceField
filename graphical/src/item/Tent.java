@@ -58,7 +58,7 @@ public class Tent extends Item implements Shelter, Serializable {
      * @param field a field, amelyen a torlendo sator all
      */
     public void destroy(Field field) {
-        Controller.instance().tentOutput(null, field, TentParam.DESTROY);
+        // Controller.instance().tentOutput(null, field, TentParam.DESTROY);
         field.removeShelter();
     }
 

@@ -22,21 +22,20 @@ public class ContainerView extends JPanel implements IView {
 	private ShelterView shelter = null;
 	private ArrayList<CharacterView> characters = new ArrayList<CharacterView>();
 
-	/// okk szóval egy mező felett van 3 panelünk
 	private JPanel leftPanel;
 	private JPanel middlePanel;
 	private JPanel rightPanel;
 	private JLabel capacity;
 	private boolean setRev = false;
 
-	public ContainerView(Dimension dimension) { // buzis ha fent van vagy mi
+	public ContainerView(Dimension dimension) {
 		this.setVisible(true);
 		this.setPreferredSize(dimension);
 		this.setFocusable(false);
-		this.setBackground(new Color(0, 0, 0, 1)); // ezek am minek
+		this.setBackground(new Color(0, 0, 0, 1));
 		this.setLayout(new GridLayout(3, 1));
 
-		SIZE = dimension.height; // literálisan mindegy
+		SIZE = dimension.height;
 
 		// Swing setup
 		setUpLeftPanel();
@@ -44,13 +43,12 @@ public class ContainerView extends JPanel implements IView {
 		setUpRightPanel();
 	}
 
-	/// SET 'N GET ///
 	public void addCharacter(CharacterView cv) {
 		this.characters.add(cv);
 		add(cv);
 	}
 
-	public void removeCharacter(CharacterView cv){
+	public void removeCharacter(CharacterView cv) {
 		characters.remove(cv);
 	}
 
@@ -69,18 +67,22 @@ public class ContainerView extends JPanel implements IView {
 		add(bv);
 	}
 
-	public void removeBear() { this.bear = null; }
+	public void removeBear() {
+		this.bear = null;
+	}
 
-	public int getContainerSize() {return SIZE;}
+	public int getContainerSize() {
+		return SIZE;
+	}
 
-	///*** ***///
+	/// *** ***///
 
 	/// SWING SETUP ///
 	private void setUpLeftPanel() {
 		leftPanel = new JPanel();
 		leftPanel.setVisible(true);
 		leftPanel.setBackground(new Color(0, 0, 0, 1));
-		leftPanel.setPreferredSize(new Dimension(30, 100)); // meghalok
+		leftPanel.setPreferredSize(new Dimension(30, 100));
 
 		this.add(leftPanel);
 	}
@@ -88,8 +90,8 @@ public class ContainerView extends JPanel implements IView {
 	private void setUpMiddlePanel() {
 		middlePanel = new JPanel();
 		middlePanel.setVisible(true);
-		middlePanel.setBackground(new Color(0, 0, 0, 1)); ///nemkeeeeellllll
-		middlePanel.setPreferredSize(new Dimension(40, 100)); // saem
+		middlePanel.setBackground(new Color(0, 0, 0, 1));
+		middlePanel.setPreferredSize(new Dimension(40, 100));
 
 		middlePanel.setLayout(new BorderLayout());
 
@@ -117,13 +119,14 @@ public class ContainerView extends JPanel implements IView {
 		this.add(rightPanel);
 	}
 
-	///*** END OF SWING SETUP ***///
+	/// *** END OF SWING SETUP ***///
 
 	/**
 	 * For revealing the fields capacity we need this.
+	 * 
 	 * @param label
 	 */
-	public void addLabel(JLabel label){ // TODO: still szar
+	public void addLabel(JLabel label) {
 		leftPanel.add(label, BorderLayout.NORTH);
 	}
 
@@ -143,7 +146,7 @@ public class ContainerView extends JPanel implements IView {
 			bear.update();
 		}
 
-		ArrayList<CharacterView> cv1 = (ArrayList<CharacterView>)characters.clone(); // okk szóval csúnya exceptionök ha ez nem így van apparently
+		ArrayList<CharacterView> cv1 = new ArrayList<CharacterView>(characters);
 
 		for (CharacterView cv : cv1) {
 			cv.update();
@@ -152,10 +155,11 @@ public class ContainerView extends JPanel implements IView {
 
 	/// DUMP
 	@Override
-	public void addTexture() {}
+	public void addTexture() {
+	}
 
-	public void setCapacity(JLabel cap){
-		if(!setRev) {
+	public void setCapacity(JLabel cap) {
+		if (!setRev) {
 			capacity = cap;
 			leftPanel.add(capacity);
 			setRev = true;

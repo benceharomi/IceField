@@ -62,10 +62,11 @@ public class Eskimo extends Character implements Serializable {
 	public boolean specialAbilityC() {
 		Igloo newIgloo = new Igloo();
 		if (ownField.setShelter(newIgloo)) {
-			Controller.instance().eszkimoSpecialAbility(ownField, 0, SpecParam.build);
+			// Controller.instance().eszkimoSpecialAbility(ownField, 0, SpecParam.build);
 			return true;
 		}
-		Controller.instance().eszkimoSpecialAbility(ownField, 0, SpecParam.cantBuild);
+		// Controller.instance().eszkimoSpecialAbility(ownField, 0,
+		// SpecParam.cantBuild);
 		return false;
 	}
 

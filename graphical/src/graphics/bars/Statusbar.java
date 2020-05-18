@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * A jatekban szereplo karakterek allapotat jeleniti meg
  */
-public class Statusbar extends JPanel implements IView { // TODO: kisebbre kéne mo
+public class Statusbar extends JPanel implements IView {
     /// ATTRIBUTES ///
 
     private ArrayList<CharacterView> characterViews;
@@ -19,23 +19,23 @@ public class Statusbar extends JPanel implements IView { // TODO: kisebbre kéne
 
     /// SWING ///
     ArrayList<JLabel> hp = new ArrayList<JLabel>();;
-    ArrayList<ImageIcon> playerImages = new ArrayList<>();
+    ArrayList<ImageIcon> playerImages = new ArrayList<ImageIcon>();
 
     /// METHODS ///
 
     /**
      * Konstruktor
      * 
-     * @param t   - team
-     * @param d   - az ablak merete
+     * @param t - team
+     * @param d - az ablak merete
      */
-    public Statusbar(Team t, ArrayList<CharacterView> cvs,Dimension d) {
+    public Statusbar(Team t, ArrayList<CharacterView> cvs, Dimension d) {
 
         team = t;
         characterViews = cvs;
 
-        for(int i = 0; i < team.getSize(); i++){
-           hp.add(new JLabel(Integer.toString(team.getCharacters().get(i).getHeat())));
+        for (int i = 0; i < team.getSize(); i++) {
+            hp.add(new JLabel(Integer.toString(team.getCharacters().get(i).getHeat())));
         }
 
         // Beállítjuk a képeket
@@ -59,7 +59,7 @@ public class Statusbar extends JPanel implements IView { // TODO: kisebbre kéne
             l.setIcon(playerImages.get(i));
             add(l);
         }
-        
+
         // Belerakjuk a labeleket a panelba
         for (int i = 0; i < hp.size(); i++) {
             add(hp.get(i));

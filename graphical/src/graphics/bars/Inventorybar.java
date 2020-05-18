@@ -27,9 +27,10 @@ public class Inventorybar extends JPanel implements IView {
 
     /**
      * Konstruktor.
-     * @param t - korabban letrejott csapat
+     * 
+     * @param t               - korabban letrejott csapat
      * @param characterImages - a karakterek IView peldanyai
-     * @param dimension - a bar merete
+     * @param dimension       - a bar merete
      */
     public Inventorybar(Team t, ArrayList<CharacterView> characterImages, Dimension dimension) {
         team = t;
@@ -37,11 +38,11 @@ public class Inventorybar extends JPanel implements IView {
         setActivePlayer();
 
         // Inventory init
-        for(Character c : team.getCharacters()){
-            inventory.put(c, new ArrayList<>());
+        for (Character c : team.getCharacters()) {
+            inventory.put(c, new ArrayList<ItemView>());
         }
         // Karakterképek init
-        for(CharacterView cv : characterImages) {
+        for (CharacterView cv : characterImages) {
             this.characterViews.put(cv.getCharacter(), cv);
         }
 
@@ -71,7 +72,8 @@ public class Inventorybar extends JPanel implements IView {
 
     /**
      * Egy targyat evvel a metodussal adhatunk hozza a barhoz
-     * @param c - tulajdonos karakter
+     * 
+     * @param c  - tulajdonos karakter
      * @param iv - Targy IView peldanya
      */
     public void addItemView(Character c, ItemView iv) {
@@ -88,16 +90,14 @@ public class Inventorybar extends JPanel implements IView {
 
         setActivePlayer();
         items.setLayout(new GridLayout(1, inventory.get(activePlayer).size()));
-        items.setSize(new Dimension(100*inventory.get(activePlayer).size(), 100));
+        items.setSize(new Dimension(100 * inventory.get(activePlayer).size(), 100));
 
-        for(ItemView it: inventory.get(activePlayer)){
+        for (ItemView it : inventory.get(activePlayer)) {
             it.update();
             items.add(it);
         }
 
         stamina.setText("stamina: " + team.getStamina());
-
-
 
         activeViewLabel.setIcon(characterViews.get(activePlayer).getTexture());
 
@@ -107,16 +107,16 @@ public class Inventorybar extends JPanel implements IView {
 
     }
 
-
     /**
      * Kiszedi a barbol a targyat
+     * 
      * @param i
      */
     public void removeItem(Item i) {
         ArrayList<ItemView> temp = inventory.get(activePlayer);
         ItemView del = null;
-        for(ItemView iv: temp){
-            if(iv.getItem() == i){
+        for (ItemView iv : temp) {
+            if (iv.getItem() == i) {
                 del = iv;
             }
         }

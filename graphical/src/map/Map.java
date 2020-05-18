@@ -283,7 +283,7 @@ public class Map implements Serializable {
                 field.setNeighbour(Direction.WEST, fields.get(indexOfField - 1));
                 neighbours.add(fields.get(indexOfField - 1));
             }
-            Controller.instance().addNeighbours(field, neighbours);
+            //Controller.instance().addNeighbours(field, neighbours);
         }
     }
 }

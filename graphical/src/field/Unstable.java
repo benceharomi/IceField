@@ -39,9 +39,11 @@ public class Unstable extends Field implements Serializable {
         if (characters.size() > capacity) {
             for (Character c1 : characters)
                 c1.setHeat(0);
-            Controller.instance().moveOutput(c, oldField, this, MovingParam.UnstableFlipped, null);
+            // Controller.instance().moveOutput(c, oldField, this,
+            // MovingParam.UnstableFlipped, null);
             return;
         }
-        Controller.instance().moveOutput(c, oldField, this, MovingParam.SuccessFull, null);
+        // Controller.instance().moveOutput(c, oldField, this, MovingParam.SuccessFull,
+        // null);
     }
 }

@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class PlayerSettings extends JFrame {
     private JPanel panel = new JPanel();
-    private JComboBox eskimoBox = new JComboBox();
-    private JComboBox explorerBox = new JComboBox();
+    private JComboBox<Integer> eskimoBox = new JComboBox<Integer>();
+    private JComboBox<Integer> explorerBox = new JComboBox<Integer>();
     private JButton start = new JButton();
 
     public PlayerSettings(Game g) {
@@ -38,12 +38,11 @@ public class PlayerSettings extends JFrame {
                 params.add(Integer.toString(getExplorerNumber()));
                 int eskimos = Integer.parseInt(params.get(0));
                 int explorers = Integer.parseInt(params.get(1));
-                if(eskimos + explorers < 7 && eskimos + explorers > 1) {
+                if (eskimos + explorers < 7 && eskimos + explorers > 1) {
                     ViewController.instance().setParams(params);
 
                     dispose();
-                }
-                else {
+                } else {
                     JOptionPane.showMessageDialog(null, "Wrong number characters");
                 }
             }
@@ -58,8 +57,8 @@ public class PlayerSettings extends JFrame {
         setVisible(true);
     }
 
-    private void setComboBox(JComboBox box) {
-        int[] values = {0, 1, 2, 3, 4, 5, 6 };
+    private void setComboBox(JComboBox<Integer> box) {
+        int[] values = { 0, 1, 2, 3, 4, 5, 6 };
         for (int i = 0; i < values.length; i++) {
             box.addItem(values[i]);
         }

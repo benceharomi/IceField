@@ -35,11 +35,13 @@ public class PolarBear implements Serializable {
         } else {
             Field oldField = field;
             field = newField;
-            if (field.polarBearAttack()) {
-                Controller.instance().polarbearmoveoutput(oldField, newField, MovingParam.polarBearAttack);
-            } else {
-                Controller.instance().polarbearmoveoutput(oldField, newField, MovingParam.polarBearMove);
-            }
+            // if (field.polarBearAttack()) {
+            // Controller.instance().polarbearmoveoutput(oldField, newField,
+            // MovingParam.polarBearAttack);
+            // } else {
+            // Controller.instance().polarbearmoveoutput(oldField, newField,
+            // MovingParam.polarBearMove);
+            // }
             return true;
         }
     }

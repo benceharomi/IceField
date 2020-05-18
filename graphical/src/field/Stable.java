@@ -34,7 +34,8 @@ public class Stable extends Field implements Serializable {
     public void addCharacter(Character c, Field oldField) {
         characters.add(c);
         c.setField(this);
-        if (oldField != null)
-            Controller.instance().moveOutput(c, oldField, this, MovingParam.SuccessFull, null);
+        // if (oldField != null)
+        // Controller.instance().moveOutput(c, oldField, this, MovingParam.SuccessFull,
+        // null);
     }
 }

@@ -122,7 +122,7 @@ public class TextureCollection {
 	}
 
 	private static void setGunPart() {
-		ArrayList<ImageIcon> gunIcon = new ArrayList<>();
+		ArrayList<ImageIcon> gunIcon = new ArrayList<ImageIcon>();
 		gunIcon.add(new ImageIcon("images/gunpart1.png"));
 		gunIcon.add(new ImageIcon("images/gunpart2.png"));
 		gunIcon.add(new ImageIcon("images/gunpart3.png"));

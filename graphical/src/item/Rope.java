@@ -25,7 +25,8 @@ public class Rope extends Item implements Serializable {
      */
     public boolean pull(Character character, Hole hole, Field field, Field fromField) {
         hole.removeCharacter(character);
-        Controller.instance().moveOutput(character, fromField, hole, MovingParam.Andreascued, field);
+        // Controller.instance().moveOutput(character, fromField, hole,
+        // MovingParam.Andreascued, field);
         field.addCharacter(character, hole);
         return true;
     }

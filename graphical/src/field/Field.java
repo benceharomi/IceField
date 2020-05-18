@@ -53,16 +53,17 @@ public abstract class Field {
         if (shelter == null)
             for (Character c : characters)
                 c.damage();
-        else
-            Controller.instance().blizzardOutput(null, this, BlizzardParam.SAFE);
-        if (!Controller.instance().isRandomBlizzard()
-                || (Controller.instance().isRandomBlizzard() && new Random().nextInt(100) < 30))
-            if (snow < MAXSNOW) {
-                snow++;
-                if (characters.size() == 0)
-                    Controller.instance().blizzardOutput(null, this, BlizzardParam.NO_EFFECT);
-            } else
-                Controller.instance().blizzardOutput(null, this, BlizzardParam.SNOW_AT_MAX);
+        // else
+        // Controller.instance().blizzardOutput(null, this, BlizzardParam.SAFE);
+        // if (!Controller.instance().isRandomBlizzard()
+        // || (Controller.instance().isRandomBlizzard() && new Random().nextInt(100) <
+        // 30))
+        // if (snow < MAXSNOW) {
+        // snow++;
+        // if (characters.size() == 0)
+        // Controller.instance().blizzardOutput(null, this, BlizzardParam.NO_EFFECT);
+        // } else
+        // Controller.instance().blizzardOutput(null, this, BlizzardParam.SNOW_AT_MAX);
     }
 
     /**
@@ -94,14 +95,14 @@ public abstract class Field {
      */
     public Item giveItem() {
         if (snow > 0) {
-            Controller.instance().itemOutput(this, ItemParam.SNOW);
+            // Controller.instance().itemOutput(this, ItemParam.SNOW);
             return null;
         }
         if (item == null) {
-            Controller.instance().itemOutput(this, ItemParam.NO_ITEM);
+            // Controller.instance().itemOutput(this, ItemParam.NO_ITEM);
             return null;
         }
-        Controller.instance().itemOutput(this, ItemParam.NORMAL);
+        // Controller.instance().itemOutput(this, ItemParam.NORMAL);
         Item temp = item;
         item = null;
         return temp;
@@ -203,7 +204,8 @@ public abstract class Field {
     public void setRevealed() {
         revealed = true;
         ViewController.instance().reveal(this);
-        Controller.instance().eszkimoSpecialAbility(this, capacity, SpecParam.explored);
+        // Controller.instance().eszkimoSpecialAbility(this, capacity,
+        // SpecParam.explored);
     }
 
     /**

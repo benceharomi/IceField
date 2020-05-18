@@ -43,7 +43,7 @@ public class Controller {
     /**
      * a parancsok listaja
      */
-    private static ArrayList<String> commandList = new ArrayList<>();
+    private static ArrayList<String> commandList = new ArrayList<String>();
     /**
      * a blizzard parameterei
      */
@@ -82,61 +82,61 @@ public class Controller {
     private static boolean polarBearManualMove = false;
 
     private static void rowTopBottom() {
-        System.out.print("+---+");
+        // System.out.print("+---+");
     }
 
     private static void row2(Field f) {
-        System.out.print("|");
-        if ((f.getSnow() != 0 && !itemAlwaysVisible))
-            System.out.print('?');
-        else if ((itemAlwaysVisible || f.getSnow() == 0) && f.getItem() == null)
-            System.out.print(' ');
-        else if (itemAlwaysVisible || f.getSnow() == 0)
-            System.out.print(f.getItem().draw());
-        if (f.getShelter() == null)
-            System.out.print(' ');
-        else
-            System.out.print(f.getShelter().draw());
-        System.out.print(" |");
+        // System.out.print("|");
+        // if ((f.getSnow() != 0 && !itemAlwaysVisible))
+        // System.out.print('?');
+        // else if ((itemAlwaysVisible || f.getSnow() == 0) && f.getItem() == null)
+        // System.out.print(' ');
+        // else if (itemAlwaysVisible || f.getSnow() == 0)
+        // System.out.print(f.getItem().draw());
+        // if (f.getShelter() == null)
+        // System.out.print(' ');
+        // else
+        // System.out.print(f.getShelter().draw());
+        // System.out.print(" |");
     }
 
     private static void row3(Field f) {
-        System.out.print("|");
-        int charnum = f.getCharacters().size();
-        charnum = Math.min(charnum, 3);
-        for (int i = 0; i < charnum; i++)
-            System.out.print(characterList.get(f.getCharacters().get(i)));
-        for (int i = 0; i < 3 - charnum; i++)
-            System.out.print(' ');
-        System.out.print("|");
+        // System.out.print("|");
+        // int charnum = f.getCharacters().size();
+        // charnum = Math.min(charnum, 3);
+        // for (int i = 0; i < charnum; i++)
+        // System.out.print(characterList.get(f.getCharacters().get(i)));
+        // for (int i = 0; i < 3 - charnum; i++)
+        // System.out.print(' ');
+        // System.out.print("|");
     }
 
     private static void row4(Field f) {
-        System.out.print("|");
-        int charnum = f.getCharacters().size();
-        charnum = Math.max(charnum, 3);
-        charnum -= 3;
-        for (int i = 0; i < charnum; i++)
-            System.out.print(characterList.get(f.getCharacters().get(i + 3)));
-        for (int i = 0; i < 3 - charnum; i++)
-            System.out.print(' ');
-        System.out.print("|");
+        // System.out.print("|");
+        // int charnum = f.getCharacters().size();
+        // charnum = Math.max(charnum, 3);
+        // charnum -= 3;
+        // for (int i = 0; i < charnum; i++)
+        // System.out.print(characterList.get(f.getCharacters().get(i + 3)));
+        // for (int i = 0; i < 3 - charnum; i++)
+        // System.out.print(' ');
+        // System.out.print("|");
     }
 
     private static void row5(Field f) {
-        System.out.print("|");
-        System.out.print(f.getSnow());
-        if (capacityVisible || f.getRevealed())
-            System.out.print(f.getCapacity());
-        else
-            System.out.print('?');
-        if (bear == null)
-            System.out.print(" ");
-        else if (bear.getField().equals(f))
-            System.out.print('P');
-        else
-            System.out.print(' ');
-        System.out.print("|");
+        // System.out.print("|");
+        // System.out.print(f.getSnow());
+        // if (capacityVisible || f.getRevealed())
+        // System.out.print(f.getCapacity());
+        // else
+        // System.out.print('?');
+        // if (bear == null)
+        // System.out.print(" ");
+        // else if (bear.getField().equals(f))
+        // System.out.print('P');
+        // else
+        // System.out.print(' ');
+        // System.out.print("|");
     }
 
     /**
@@ -148,7 +148,7 @@ public class Controller {
         if (map == null)
             return;
         ArrayList<Field> fields = map.getFields();
-        System.out.println(map.getFields().size());
+        // System.out.println(map.getFields().size());
         for (int mapRow = 0; mapRow < map.getRows(); mapRow++) {
             for (int row = 0; row < 7; row++) {
                 for (int mapColumn = 0; mapColumn < map.getColumns(); mapColumn++) {
@@ -174,7 +174,7 @@ public class Controller {
                             break;
                     }
                 }
-                System.out.println();
+                // System.out.println();
             }
         }
     }
@@ -186,7 +186,7 @@ public class Controller {
      */
     public static void setMap(Map map) {
         Controller.map = map;
-        Controller.instance().drawMap();
+        // Controller.instance().drawMap();
     }
 
     /**
@@ -225,13 +225,13 @@ public class Controller {
         try {
             FileWriter fw = new FileWriter(filePath);
             commandList.add("Game log saved to " + fileName);
-            System.out.println("Game log saved to " + fileName);
+            // System.out.println("Game log saved to " + fileName);
             for (String s : commandList) {
                 fw.write(s + "\n");
             }
             fw.close();
         } catch (IOException e) {
-            System.out.println("Controller");
+            // System.out.println("Controller");
         }
 
     }
@@ -345,30 +345,30 @@ public class Controller {
         switch (PARAM) {
             case NO_EFFECT: {
                 output = "Blizzard " + fieldList.get(field) + " no effect";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case SAFE: {
                 output = "Blizzard " + fieldList.get(field) + " safe";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case DAMAGE: {
                 output = "Blizzard " + fieldList.get(field) + " " + characterList.get(character) + " damaged";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case SNOW_AT_MAX: {
                 output = "Blizzard " + fieldList.get(field) + " no effect, snow at maximum";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             default: {
-                System.out.println("Hibas parameter");
+                // System.out.println("Hibas parameter");
                 break;
             }
         }
@@ -386,30 +386,30 @@ public class Controller {
         switch (PARAM) {
             case BUILD: {
                 output = characterList.get(character) + " built tent on " + fieldList.get(field);
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case DESTROY: {
                 output = "Tent on " + fieldList.get(field) + " destroyed";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case NO_TENT: {
                 output = characterList.get(character) + " has no tent";
-                System.out.println(output);
+                // .println(output);
                 commandList.add(output);
                 break;
             }
             case OCCUPIED: {
                 output = characterList.get(character) + " didn't build " + fieldList.get(field) + " has shelter";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             default: {
-                System.out.println("Hibas parameter");
+                // System.out.println("Hibas parameter");
                 break;
             }
         }
@@ -428,27 +428,27 @@ public class Controller {
         switch (PARAM) {
             case SNOW: {
                 output = characterList.get(activePlayer) + " GetItem " + fieldList.get(field) + " snow";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
 
             }
             case NORMAL: {
                 output = characterList.get(activePlayer) + " GetItem " + fieldList.get(field);
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
 
             }
             case NO_ITEM: {
                 output = characterList.get(activePlayer) + " GetItem " + fieldList.get(field) + " no item";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
 
             }
             default: {
-                System.out.println("Hibas parameter");
+                // System.out.println("Hibas parameter");
                 break;
             }
         }
@@ -461,9 +461,10 @@ public class Controller {
      * @param item      - mit
      */
     public static void deleteItemsOutput(Character character, Item item) {
-//        String output = characterList.get(character) + " removed " + item.getClass().getName();
- //       System.out.println(output);
-  //      commandList.add(output);
+        // String output = characterList.get(character) + " removed " +
+        // item.getClass().getName();
+        // System.out.println(output);
+        // commandList.add(output);
     }
 
     /**
@@ -478,24 +479,24 @@ public class Controller {
         switch (PARAM) {
             case NO_SHOVEL: {
                 output = characterList.get(character) + " Dig " + fieldList.get(field);
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case SHOVEL: {
                 output = characterList.get(character) + " Dig " + fieldList.get(field) + " shovel";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case NO_SNOW: {
                 output = characterList.get(character) + " Dig " + fieldList.get(field) + " no snow";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             default: {
-                System.out.println("Hibas parameter");
+                // System.out.println("Hibas parameter");
                 break;
             }
         }
@@ -508,7 +509,7 @@ public class Controller {
      */
     public static void activePlayerOutput(Character character) {
         String output = characterList.get(character) + " is active player";
-        System.out.println(output);
+        // System.out.println(output);
         commandList.add(output);
     }
 
@@ -517,7 +518,7 @@ public class Controller {
      */
     public static void GameOver() {
         String output = "GameOver";
-        System.out.println(output);
+        // System.out.println(output);
         commandList.add(output);
     }
     // -------------------------------------------------------------------------------
@@ -543,40 +544,40 @@ public class Controller {
             case SuccessFull: {
                 output = characterList.get(character) + " move from " + fieldList.get(fromField) + " to "
                         + fieldList.get(newField);
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case HoleScuba: {
                 output = characterList.get(character) + " move from " + fieldList.get(fromField) + " to "
                         + fieldList.get(newField) + " in scubasuit";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case UnstableFlipped: {
                 output = characterList.get(character) + " move from " + fieldList.get(fromField) + " to "
                         + fieldList.get(newField) + " the field flipped";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case Drowned: {
                 output = characterList.get(character) + " move from " + fieldList.get(fromField) + " to "
                         + fieldList.get(newField) + " and drowned";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case Andreascued: {
                 output = characterList.get(character) + " move from " + fieldList.get(fromField) + " to "
                         + fieldList.get(newField) + " and was rescued from " + fieldList.get(rescudeField);
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             default: {
-                System.out.println(PARAM);
+                // System.out.println(PARAM);
                 break;
             }
         }
@@ -596,19 +597,19 @@ public class Controller {
         switch (PARAM) {
             case polarBearMove: {
                 output = "Polarbear moved from " + fieldList.get(fromField) + " to " + fieldList.get(newField);
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case polarBearAttack: {
                 output = "Polarbear moved from " + fieldList.get(fromField) + " to " + fieldList.get(newField)
                         + " and attacked";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             default: {
-                System.out.println(PARAM);
+                // System.out.println(PARAM);
                 break;
             }
         }
@@ -628,25 +629,25 @@ public class Controller {
         switch (PARAM) {
             case build: {
                 output = characterList.get(activePlayer) + " Eskimo " + fieldList.get(f) + " built igloo";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case cantBuild: {
                 output = characterList.get(activePlayer) + " Eskimo " + fieldList.get(f) + " already have shelter";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case explored: {
                 output = characterList.get(activePlayer) + " Explorer explored " + fieldList.get(f) + " capacity: "
                         + cap;
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             default: {
-                System.out.println(PARAM);
+                // System.out.println(PARAM);
                 break;
             }
         }
@@ -663,7 +664,7 @@ public class Controller {
         for (int i = 0; i < neighbourField.size(); i++) {
             output = output + fieldList.get(neighbourField.get(i)) + " ";
         }
-        System.out.println(output);
+        // System.out.println(output);
     }
 
     /**
@@ -677,7 +678,7 @@ public class Controller {
         int letter = fieldList.size() + 1;
         String output = "Created new field " + " " + letter + ", " + type + ", " + capacity;
         fieldList.put(f, "" + letter);
-        System.out.println(output);
+        // System.out.println(output);
     }
 
     /**
@@ -686,7 +687,7 @@ public class Controller {
     public static void victoryout() {
         String output;
         output = "Victory";
-        System.out.println(output);
+        // System.out.println(output);
         commandList.add(output);
     }
 
@@ -702,7 +703,7 @@ public class Controller {
         for (int i = 0; i < 3 - num; i++) {
             output += " Flaregunpart" + (char) (i + 65);
         }
-        System.out.println(output);
+        // System.out.println(output);
         commandList.add(output);
     }
 
@@ -711,7 +712,7 @@ public class Controller {
      */
     public static void differentout() {
         String output = "AssambleParts different fields";
-        System.out.println(output);
+        // System.out.println(output);
         commandList.add(output);
     }
 
@@ -728,24 +729,24 @@ public class Controller {
         switch (PARAM) {
             case eat: {
                 output = characterList.get(character) + " Eat " + (character.getHeat() - 1) + " " + character.getHeat();
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case eatNoFood: {
                 output = characterList.get(character) + " Eat no food";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             case heatMax: {
                 output = characterList.get(character) + " Eat max";
-                System.out.println(output);
+                // System.out.println(output);
                 commandList.add(output);
                 break;
             }
             default: {
-                System.out.println(PARAM);
+                // System.out.println(PARAM);
                 break;
             }
         }
@@ -758,7 +759,7 @@ public class Controller {
      */
     public static void endTurnout(Character character) {
         String output = characterList.get(character) + " ended turn early";
-        System.out.println(output);
+        // System.out.println(output);
         commandList.add(output);
     }
 }

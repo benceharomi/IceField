@@ -29,7 +29,7 @@ public class ViewController {
 	private static Team team;
 	private static JFrame frame;
 	private static ArrayList<String> params;
-	private static ArrayList<CharacterView> characterImages = new ArrayList<>();
+	private static ArrayList<CharacterView> characterImages = new ArrayList<CharacterView>();
 
 	/**
 	 * Required for singleton usage
@@ -57,12 +57,12 @@ public class ViewController {
 	 * @param tem
 	 */
 	public static void createTeam(Team tem) {
-		team = tem; // csapat
-		viewcollection.setTeam(team); // atadjuk a ViewCollectionnek
-		int rows = team.getMap().getRows(); // meret?
-		int collumns = team.getMap().getColumns(); // meret?
-		viewcollection.createPanel(); // TODO: CHECK THIS
-		viewcollection.setupMap(rows, collumns, frame); // Map beállítás --> középső panel?
+		team = tem; 
+		viewcollection.setTeam(team); 
+		int rows = team.getMap().getRows(); 
+		int collumns = team.getMap().getColumns(); 
+		viewcollection.createPanel();
+		viewcollection.setupMap(rows, collumns, frame); 
 
 		frame.pack();
 	}
@@ -71,9 +71,9 @@ public class ViewController {
 	 * Method which initializes the ViewCollection of the GUI objects.
 	 */
 	public static void addViewCollection() {
-		viewcollection = new ViewCollection(); // Collection INIT
-		frame = new JFrame("Jegmezo"); // ez milyen frame?
-		frame.add(viewcollection); // yay szal a collection egy panel?
+		viewcollection = new ViewCollection(); 
+		frame = new JFrame("Jegmezo"); 
+		frame.add(viewcollection);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -119,7 +119,7 @@ public class ViewController {
 	 */
 	public static void removeCharacter(Field key, CharacterView cv) {
 		viewcollection.removeCharacter(key, cv);
-	} // a karaktert am kiszedjük?
+	} 
 
 	/**
 	 * Visualizes a Shelter on the map on the given Field
@@ -246,11 +246,11 @@ public class ViewController {
 	 * 
 	 * @param field
 	 */
-	public static void reveal(Field field) { // TODO: THIS SHIT DOESN'T WORK
+	public static void reveal(Field field) {
 		viewcollection.reveal(field);
 	}
 
-	public static void setCapacity(JLabel cap, Field f){
+	public static void setCapacity(JLabel cap, Field f) {
 		viewcollection.setCapacity(cap, f);
 	}
 

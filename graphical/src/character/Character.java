@@ -81,7 +81,7 @@ public abstract class Character implements Serializable {
 	 * @param startField : A mezo amelyre a karaktert elhelyezzuk.
 	 */
 	public Character(Field startField) {
-		Controller.instance().createCharacter(this);
+		// Controller.instance().createCharacter(this);
 		ownField = startField;
 		items = new ArrayList<Item>();
 	}
@@ -95,7 +95,7 @@ public abstract class Character implements Serializable {
 	 *                   kepezni.
 	 */
 	public Character(Field startField, ArrayList<Item> inventory) {
-		Controller.instance().createCharacter(this);
+		// Controller.instance().createCharacter(this);
 		ownField = startField;
 		items = inventory;
 	}
@@ -123,7 +123,7 @@ public abstract class Character implements Serializable {
 	 * A karakter testhojet (heat) csokkenti egyel. pl hovihar eseten.
 	 */
 	public void damage() {
-		Controller.instance().blizzardOutput(this, ownField, BlizzardParam.DAMAGE);
+		// Controller.instance().blizzardOutput(this, ownField, BlizzardParam.DAMAGE);
 		heat--;
 		return;
 	}
@@ -142,16 +142,16 @@ public abstract class Character implements Serializable {
 			Item del = null;
 			for (Item i : items) {
 				if (i.deploy(ownField)) {
-					Controller.instance().tentOutput(this, ownField, TentParam.BUILD);
+					// Controller.instance().tentOutput(this, ownField, TentParam.BUILD);
 					del = i;
 					ret = true;
 				}
 			}
 			removeItem(del);
-			//Controller.instance().deleteItemsOutput(this, del);
+			// Controller.instance().deleteItemsOutput(this, del);
 		}
-		if (!ret)
-			Controller.instance().tentOutput(this, ownField, TentParam.NO_TENT);
+		// if (!ret)
+		// Controller.instance().tentOutput(this, ownField, TentParam.NO_TENT);
 		return ret;
 	}
 
@@ -164,18 +164,18 @@ public abstract class Character implements Serializable {
 	 */
 	public boolean digC() {
 		if (ownField.removeSnow()) {
-			Controller.instance().digOutput(this, ownField, ShovelParam.NO_SHOVEL);
+			// Controller.instance().digOutput(this, ownField, ShovelParam.NO_SHOVEL);
 			if (items != null) {
 				for (Item i : items) {
 					if (i.dig(ownField, this)) {
-						Controller.instance().digOutput(this, ownField, ShovelParam.SHOVEL);
+						// Controller.instance().digOutput(this, ownField, ShovelParam.SHOVEL);
 						return true;
 					}
 				}
 			}
 			return true;
 		}
-		Controller.instance().digOutput(this, ownField, ShovelParam.NO_SNOW);
+		// Controller.instance().digOutput(this, ownField, ShovelParam.NO_SNOW);
 		return false;
 	}
 
@@ -193,18 +193,18 @@ public abstract class Character implements Serializable {
 				if (i.eat(this)) {
 					if (beforeHeat < heat) {
 						removeItem(i);
-						Controller.instance().deleteItemsOutput(this, i);
-						Controller.instance().eatoutput(this, EatParam.eat);
+						// Controller.instance().deleteItemsOutput(this, i);
+						// Controller.instance().eatoutput(this, EatParam.eat);
 						return true;
 					}
-					Controller.instance().eatoutput(this, EatParam.heatMax);
+					// Controller.instance().eatoutput(this, EatParam.heatMax);
 					return false;
 				}
 			}
 		}
-		if (beforeHeat == heat) {
-			Controller.instance().eatoutput(this, EatParam.eatNoFood);
-		}
+		// if (beforeHeat == heat) {
+		// Controller.instance().eatoutput(this, EatParam.eatNoFood);
+		// }
 		return false;
 	}
 
@@ -298,7 +298,7 @@ public abstract class Character implements Serializable {
 	public void removeItem(Item remov) {
 		items.remove(remov);
 		ViewController.instance().removeItem(remov);
-		Controller.instance().deleteItemsOutput(this, remov);
+		// Controller.instance().deleteItemsOutput(this, remov);
 	}
 
 	/**

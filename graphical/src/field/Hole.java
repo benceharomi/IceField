@@ -39,7 +39,8 @@ public class Hole extends Field implements Serializable {
         c.setField(this);
         ViewController.instance().updateAll();
         if (c.holeNotification()) {
-            Controller.instance().moveOutput(c, oldField, this, MovingParam.HoleScuba, null);
+            // Controller.instance().moveOutput(c, oldField, this, MovingParam.HoleScuba,
+            // null);
             return;
         }
         boolean hasBeenPulled = false;
@@ -49,7 +50,8 @@ public class Hole extends Field implements Serializable {
         }
         if (!hasBeenPulled) {
             c.setHeat(0);
-            Controller.instance().moveOutput(c, oldField, this, MovingParam.Drowned, null);
+            // Controller.instance().moveOutput(c, oldField, this, MovingParam.Drowned,
+            // null);
         }
     }
 }

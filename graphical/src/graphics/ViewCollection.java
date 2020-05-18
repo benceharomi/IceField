@@ -40,7 +40,7 @@ public class ViewCollection extends JPanel {
 	private Statusbar statusBar; // Jatekosok allapotanak kijelzesere
 	private Inventorybar inventoryBar; // Aktiv jatekos, targyai
 	private JPanel map = new JPanel(); // Kozepso resz ahol a jatek megy
-	private JPanel containerPanel = new JPanel(); // idk yet
+	private JPanel containerPanel = new JPanel();
 
 	/**
 	 * Kezdeti panelbeállítás
@@ -52,14 +52,14 @@ public class ViewCollection extends JPanel {
 		this.setBackground(new Color(138, 147, 234));
 		this.setFocusable(true);
 		this.setFocusTraversalKeysEnabled(false);
-		this.addKeyListener(new ArrowListener(team)); // na ez jobb nem?
+		this.addKeyListener(new ArrowListener(team));
 
 		this.setLayout(new BorderLayout());
 		/// pack?
 	}
 
 	public void setTeam(Team t) {
-		System.out.println("Karakterek szama: " + t.getCharacters().size()); // valszeg debug?
+		System.out.println("Karakterek szama: " + t.getCharacters().size());
 		team = t;
 	}
 
@@ -70,7 +70,7 @@ public class ViewCollection extends JPanel {
 		map.setBackground(new Color(138, 147, 234));
 
 		containerPanel.setLayout(new GridLayout(rows, collumns));
-		containerPanel.setPreferredSize(new Dimension(160 * collumns, 160 * rows)); // talán a mezők mérete
+		containerPanel.setPreferredSize(new Dimension(160 * collumns, 160 * rows));
 		containerPanel.setBackground(new Color(0, 0, 0, 0));
 		containerPanel.setOpaque(false);
 
@@ -81,23 +81,23 @@ public class ViewCollection extends JPanel {
 			containerPanel.add(containers.get(fields.get(fv)));
 		}
 
-		System.out.println(owner.getSize().getHeight());
+		// System.out.println(owner.getSize().getHeight());
 		map.setBounds((DEFAULT_WIDTH - 160 * collumns) / 2, (DEFAULT_HEIGHT - 160 * rows - 150) / 2, 160 * collumns,
 				160 * rows);
 		containerPanel.setBounds((DEFAULT_WIDTH - 160 * collumns) / 2, (DEFAULT_HEIGHT - 160 * rows - 150) / 2,
 				160 * collumns, 160 * rows);
 
-		Integer a = 0; // ???????????????????????????????????????
-		JLayeredPane LayerdPane = new JLayeredPane(); // ???????????????????????????????
-		LayerdPane.add(map, a, 0); // ???????????????????????????????
-		a = 1; // ???????????????????????????????
-		LayerdPane.add(containerPanel, a, 0); // ???????????????????????????????
-		this.add(LayerdPane, BorderLayout.CENTER); // ???????????????????????????????
+		Integer a = 0;
+		JLayeredPane LayerdPane = new JLayeredPane();
+		LayerdPane.add(map, a, 0);
+		a = 1;
+		LayerdPane.add(containerPanel, a, 0);
+		this.add(LayerdPane, BorderLayout.CENTER);
 
 		ViewController.instance().addBars();
 
 		this.setVisible(true);
-		System.out.println(owner.getSize().getHeight());
+		// System.out.println(owner.getSize().getHeight());
 		ViewController.instance().updateAll();
 	}
 
@@ -130,7 +130,7 @@ public class ViewCollection extends JPanel {
 		/// menj integrálj legközelebb
 		map.setBounds((DEFAULT_WIDTH - 160 * team.getMap().getColumns()) / 2,
 				(DEFAULT_HEIGHT - 160 * team.getMap().getRows() - 150) / 2, 160 * team.getMap().getColumns(),
-				160 * team.getMap().getRows()); // mibe
+				160 * team.getMap().getRows());
 		containerPanel.setBounds((DEFAULT_WIDTH - 160 * team.getMap().getColumns()) / 2,
 				(DEFAULT_HEIGHT - 160 * team.getMap().getRows() - 150) / 2, 160 * team.getMap().getColumns(),
 				160 * team.getMap().getRows());
@@ -185,17 +185,14 @@ public class ViewCollection extends JPanel {
 		inventoryBar.addItemView(own, iv);
 	}
 
-	public void setCapacity(JLabel cap, Field f){
+	public void setCapacity(JLabel cap, Field f) {
 		containers.get(f).setCapacity(cap);
 	}
 
-
 	public void reveal(Field field) {
-		// TODO ez itt nagyon fos. Csináld meg!!!!
 		JLabel capac = new JLabel("[" + field.getCapacity() + "]");
 		for (FieldView cv : fields.keySet()) {
-			if (fields.get(cv) == field) { // ok szóval ide nem lép be soha
-				// TODO: this needs to be implemented
+			if (fields.get(cv) == field) {
 			}
 		}
 	}
