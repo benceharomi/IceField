@@ -31,3 +31,7 @@ A modellt érintő módosulásokat a prototípus koncepciója c. dokumentum 0. f
 
 A szkeleton fázisban leadott dokumentumokba a változást nem kell átvezetni. A változásoknak csak a továbbiakban leadandó dokumentumokban kell megjelenniük.
 
+### Screenshots:
+![](graphical/screenshots/screenshot1.png)
+![](graphical/screenshots/screenshot2.png)
+![](graphical/screenshots/screenshot3.png)
