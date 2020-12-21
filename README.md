@@ -11,12 +11,19 @@ java -cp bin main.Main
 
 ## Keybindings
 Arrows: movement
+
 A: assemble the spare gun
+
 D: dig
+
 T: tent
+
 E: eat
+
 Space: end turn
+
 G: collect object
+
 S: use special ability
 - - - -
 
