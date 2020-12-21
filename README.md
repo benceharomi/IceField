@@ -4,12 +4,22 @@ Icefield is my Software Project Lab subject's semester project which I developed
 ## Compiling and running the game
 Compile using:
 ```
-javac $(find ./* | grep .java) -d bin
+javac $(find ./src/* | grep .java) -d bin
 ```
 Run the game with this command:
 ```
 java -cp bin main.Main
 ```
+
+## Keybindings
+Arrows: movement
+A: assemble the spare gun
+D: dig
+T: tent
+E: eat
+Space: end turn
+G: collect object
+S: use special ability
 - - - -
 
 ## Jégmező
@@ -41,6 +51,6 @@ A modellt érintő módosulásokat a prototípus koncepciója c. dokumentum 0. f
 A szkeleton fázisban leadott dokumentumokba a változást nem kell átvezetni. A változásoknak csak a továbbiakban leadandó dokumentumokban kell megjelenniük.
 
 ### Screenshots:
-![](graphical/screenshots/screenshot1.png)
-![](graphical/screenshots/screenshot2.png)
-![](graphical/screenshots/screenshot3.png)
+![](assets/screenshot1.png)
+![](assets/screenshot2.png)
+![](assets/screenshot3.png)

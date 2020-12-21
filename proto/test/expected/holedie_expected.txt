@@ -1,4 +1,0 @@
-A is active player
-A move from 1 to 2 and drowned
-GameOver
-Game log saved to holedie.txt

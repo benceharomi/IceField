@@ -1,6 +1,0 @@
-A is active player
-Blizzard 1 A damaged
-Blizzard 1 B damaged
-Blizzard 1 no effect, snow at maximum
-GameOver
-Game log saved to blizzardtest2.txt

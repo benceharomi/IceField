@@ -1,4 +1,0 @@
-A is active player
-A Dig 1
-A Dig 1 shovel
-Game log saved to digshovel.txt

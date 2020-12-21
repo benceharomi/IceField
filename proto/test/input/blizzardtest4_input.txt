@@ -1,8 +1,0 @@
-Mapcreate 2 3 s 4 s 2 s 2 s 0 s 1 s 0
-Setting RandomBlizzard false
-Itemcreate 6 tent
-Eskimo 6 5
-GetItem
-Deploy
-Blizzard 6
-Save log blizzardtest4.txt

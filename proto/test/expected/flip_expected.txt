@@ -1,4 +1,0 @@
-A is active player
-A move from 1 to 2 the field flipped
-GameOver
-Game log saved to flip.txt

@@ -1,7 +1,0 @@
-A is active player
-A GetItem 6
-A built tent on 6
-A removed item.Tent
-Blizzard 6 safe
-Tent on 6 destroyed
-Game log saved to blizzardtest4.txt

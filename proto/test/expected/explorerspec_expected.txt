@@ -1,6 +1,0 @@
-A is active player
-A Explorer explored 2 capacity: 4
-A Explorer explored 6 capacity: 5
-A Explorer explored 8 capacity: 4
-A Explorer explored 4 capacity: 8
-Game log saved to explorerspec.txt

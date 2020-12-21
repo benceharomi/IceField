@@ -1,4 +1,0 @@
-A is active player
-A move from 1 to 2
-A move from 2 to 3
-Game log saved to move.txt

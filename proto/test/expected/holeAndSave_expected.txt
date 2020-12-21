@@ -1,4 +1,0 @@
-A is active player
-A move from 1 to 2 and was rescued from 1
-A move from 2 to 1
-Game log saved to holeAndSave.txt

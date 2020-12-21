@@ -1,4 +1,0 @@
-Mapcreate 1 1 s 0
-Eskimo 1 3
-Deploy
-Save log deploynotent.txt

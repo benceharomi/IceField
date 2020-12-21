@@ -1,4 +1,0 @@
-Mapcreate 1 1 s 1
-Eskimo 1 3 tent shovel
-Deploy
-Save log buildtent.txt

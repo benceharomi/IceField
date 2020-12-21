@@ -1,6 +1,0 @@
-Mapcreate 2 3 s 4 s 2 s 2 s 0 s 1 s 0
-Setting RandomBlizzard false
-Explorer 1 5
-Explorer 1 1
-Blizzard 1
-Save log blizzardtest2.txt

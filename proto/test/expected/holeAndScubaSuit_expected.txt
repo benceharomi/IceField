@@ -1,3 +1,0 @@
-A is active player
-A move from 1 to 2 in scubasuit
-Game log saved to holeAndScubaSuit.txt

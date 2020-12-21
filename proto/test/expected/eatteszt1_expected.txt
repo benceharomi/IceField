@@ -1,6 +1,0 @@
-A is active player
-A Eat max
-A ended turn early
-B is active player
-B Eat max
-Game log saved to eatteszt1.txt

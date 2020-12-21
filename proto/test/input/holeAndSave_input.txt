@@ -1,5 +1,0 @@
-Mapcreate 1 2 s 1 h 2
-Eskimo 1 3 food
-Explorer 1 4 tent rope
-Move EAST
-Save log holeAndSave.txt
